@@ -1,17 +1,18 @@
 main {
-    padding-top: 32px;
+    padding-top: 2rem;
 }
 
 .background {
-    background: url("../images/plans-background.jpg");
+    background: url("../images/plans-background.jpg") center/cover;
+    filter: grayscale(30%);
     position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
 }
 
 .package {
-    margin: 16px 0;
+    margin: 1rem 0;
     padding: 0;
     width: 80%;
     border: 4px solid #0e4f1f;
@@ -22,7 +23,7 @@ main {
 .package a {
     display: block;
     text-decoration: none;
-    padding: 32px;
+    padding: 2rem;
     color: inherit;
 }
 
@@ -38,11 +39,12 @@ main {
     position: absolute;
     top: 0px;
     right: 0;
-    margin: 20px;
-    font-size: 12px;
+    margin: 1.25rem;
+    font-size: 0.75rem;
     color: #fff;
     background-color: #ff5454;
-    padding: 8px;
+    padding: 0.5rem;
+    z-index: 10;
 }
 
 .package__benefit {
@@ -57,8 +59,8 @@ main {
     background-color: #fff;
     border: 1px solid #0e4f1f;
     color: #0e4f1f;
-    padding: 16px;
-    font-size: 20px;
+    padding: 1rem;
+    font-size: 1.25rem;
 }
 
 .clearfix {
@@ -77,6 +79,10 @@ main {
     border-right: none;
 }
 
+#second .package__description {
+    text-align: right;
+}
+
 #second:hover,
 #second:active {
     border-left: 4px solid #FF5454;
@@ -93,4 +99,32 @@ main {
 
 #third .package__benefit {
     color: #bbb;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 75rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 75rem) {
+    .package {
+        border-left: 4px solid #0e4f1f;
+    }
+
+    #second {
+        border-right: 4px solid #0e4f1f;
+    }
+
+    .package:hover,
+    .package:active {
+        border-left: 4px solid #ff5454;
+    }
+
+    #second:hover,
+    #second:active {
+        border-right-color: #ff5454;
+    }
 }
